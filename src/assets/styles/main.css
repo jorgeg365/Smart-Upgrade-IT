@@ -369,6 +369,7 @@ h1 {
   padding: 84px clamp(24px, 12vw, 240px) 48px;
   background: #000000;
   color: #ffffff;
+  text-align: center;
 }
 
 .site-footer h2 {
@@ -381,20 +382,16 @@ h1 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-  gap: 60px;
+  justify-items: center;
+  gap: 34px;
   min-height: 230px;
 }
 
 .footer-grid div:first-child {
-  justify-self: center;
-  text-align: left;
+  text-align: center;
 }
 
 .footer-grid div:last-child {
-  align-self: center;
-  justify-self: center;
   text-align: center;
 }
 
@@ -415,6 +412,7 @@ h1 {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 900;
+  text-align: center;
 }
 
 .error-box {
@@ -501,7 +499,6 @@ h1 {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
     gap: 36px;
     min-height: auto;
   }
