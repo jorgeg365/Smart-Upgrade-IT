@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Technology workspace illustration</title>
+  <desc id="desc">Abstract desktop with connected technology panels.</desc>
+  <rect width="1200" height="800" fill="#e9f2f6"/>
+  <rect x="640" y="118" width="382" height="238" rx="24" fill="#ffffff" stroke="#b8ccd6" stroke-width="4"/>
+  <rect x="690" y="168" width="282" height="24" rx="12" fill="#0f6f8f"/>
+  <rect x="690" y="224" width="218" height="18" rx="9" fill="#9cb7c6"/>
+  <rect x="690" y="266" width="252" height="18" rx="9" fill="#c5d5dd"/>
+  <rect x="746" y="440" width="330" height="178" rx="24" fill="#ffffff" stroke="#b8ccd6" stroke-width="4"/>
+  <circle cx="810" cy="530" r="38" fill="#247a53"/>
+  <rect x="876" y="498" width="140" height="18" rx="9" fill="#9cb7c6"/>
+  <rect x="876" y="542" width="102" height="18" rx="9" fill="#c5d5dd"/>
+  <path d="M548 330 C660 330, 650 530, 746 530" fill="none" stroke="#0f6f8f" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="548" cy="330" r="18" fill="#0f6f8f"/>
+  <circle cx="746" cy="530" r="18" fill="#0f6f8f"/>
+</svg>
