@@ -59,9 +59,11 @@ img {
 }
 
 .brand-name {
+  display: inline-block;
   font-size: clamp(1rem, 1.25vw, 1.35rem);
   font-weight: 900;
   text-shadow: 2px 2px 0 rgba(154, 100, 255, 0.5);
+  animation: brandFloat 5s ease-in-out infinite;
 }
 
 .profile-badge {
@@ -82,7 +84,18 @@ img {
 .nav {
   justify-self: end;
   display: flex;
-  border: 1px dashed var(--purple);
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid rgba(165, 100, 255, 0.55);
+  border-radius: 999px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015)),
+    rgba(0, 0, 0, 0.82);
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(165, 100, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  animation: navFloat 5.5s ease-in-out infinite;
 }
 
 .nav button {
@@ -90,17 +103,25 @@ img {
   min-height: 48px;
   padding: 0 18px;
   border: 0;
+  border-radius: 999px;
   color: #ffffff;
-  background: transparent;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
   font-size: 1rem;
   font-weight: 900;
   cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .nav button:hover,
 .nav button:focus,
 .nav button.active {
-  background: var(--purple);
+  background:
+    linear-gradient(145deg, rgba(200, 161, 255, 0.96), rgba(122, 57, 255, 0.92));
+  box-shadow:
+    0 10px 22px rgba(122, 57, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
 }
 
 .menu-button {
@@ -365,38 +386,154 @@ h1 {
 }
 
 .site-footer {
-  min-height: 515px;
-  padding: 84px clamp(24px, 12vw, 240px) 48px;
+  position: relative;
+  min-height: 620px;
+  padding: 92px clamp(24px, 12vw, 240px) 48px;
+  overflow: hidden;
   background: #000000;
   color: #ffffff;
   text-align: center;
 }
 
+@keyframes navFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes brandFloat {
+  0%,
+  100% {
+    text-shadow:
+      2px 2px 0 rgba(154, 100, 255, 0.5),
+      0 0 0 rgba(48, 230, 255, 0);
+    transform: translateY(0);
+  }
+
+  50% {
+    text-shadow:
+      3px 4px 0 rgba(154, 100, 255, 0.62),
+      0 0 18px rgba(48, 230, 255, 0.26);
+    transform: translateY(-4px);
+  }
+}
+
+.site-footer::before {
+  position: absolute;
+  inset: auto 0 0;
+  height: 62%;
+  content: "";
+  background:
+    linear-gradient(rgba(165, 100, 255, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(48, 230, 255, 0.1) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(transparent, #000 38%, transparent);
+  transform: perspective(560px) rotateX(68deg) translateY(160px);
+  transform-origin: center bottom;
+}
+
+.contact-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 410px;
+  perspective: 1100px;
+}
+
+.contact-halo {
+  position: absolute;
+  width: min(620px, 88vw);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(48, 230, 255, 0.2), transparent 34%),
+    radial-gradient(circle, rgba(165, 100, 255, 0.16), transparent 62%);
+  filter: blur(2px);
+  animation: contactPulse 5s ease-in-out infinite;
+}
+
+.contact-console {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+  padding: 42px clamp(20px, 5vw, 56px);
+  border: 1px solid rgba(165, 100, 255, 0.42);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025)),
+    rgba(5, 5, 14, 0.78);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.88),
+    0 0 54px rgba(165, 100, 255, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transform: rotateX(9deg) rotateY(-7deg);
+  transform-style: preserve-3d;
+  animation: contactFloat 6s ease-in-out infinite;
+}
+
+.contact-console::before,
+.contact-console::after {
+  position: absolute;
+  inset: 18px;
+  z-index: -1;
+  content: "";
+  border: 1px solid rgba(48, 230, 255, 0.25);
+  border-radius: 14px;
+  transform: translateZ(-34px);
+}
+
+.contact-console::after {
+  inset: 34px;
+  border-color: rgba(165, 100, 255, 0.22);
+  transform: translateZ(-68px);
+}
+
 .site-footer h2 {
   margin: 0 0 42px;
   text-align: center;
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  font-weight: 900;
+  letter-spacing: 0;
   text-transform: uppercase;
+  text-shadow:
+    0 0 18px rgba(48, 230, 255, 0.55),
+    0 9px 0 rgba(165, 100, 255, 0.16);
 }
 
 .footer-grid {
   display: grid;
   justify-items: center;
-  gap: 34px;
-  min-height: 230px;
+  gap: 22px;
+  min-height: 0;
 }
 
-.footer-grid div:first-child {
+.contact-card {
+  width: min(520px, 100%);
+  padding: 20px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(165, 100, 255, 0.18), rgba(48, 230, 255, 0.08)),
+    rgba(0, 0, 0, 0.34);
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
   text-align: center;
+  transform: translateZ(46px);
 }
 
-.footer-grid div:last-child {
-  text-align: center;
+.secondary-card {
+  transform: translateZ(24px) translateY(4px);
 }
 
 .footer-label {
   color: var(--purple);
+  text-shadow: 0 0 18px rgba(165, 100, 255, 0.65);
 }
 
 .footer-grid p,
@@ -409,10 +546,47 @@ h1 {
 }
 
 .copyright {
+  position: relative;
+  z-index: 1;
   margin: 0;
   font-size: 1.25rem;
   font-weight: 900;
   text-align: center;
+}
+
+.contact-shadow {
+  position: absolute;
+  bottom: 20px;
+  width: min(620px, 82vw);
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(165, 100, 255, 0.24), rgba(0, 0, 0, 0) 70%);
+  filter: blur(8px);
+  transform: rotateX(72deg);
+}
+
+@keyframes contactFloat {
+  0%,
+  100% {
+    transform: rotateX(9deg) rotateY(-7deg) translateY(0);
+  }
+
+  50% {
+    transform: rotateX(7deg) rotateY(7deg) translateY(-12px);
+  }
+}
+
+@keyframes contactPulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .error-box {
@@ -501,6 +675,11 @@ h1 {
   .footer-grid {
     gap: 36px;
     min-height: auto;
+  }
+
+  .contact-console {
+    transform: none;
+    animation: none;
   }
 
   .copyright {
