@@ -618,6 +618,13 @@ h1 {
   font-size: 1.25rem;
   font-weight: 900;
   text-align: center;
+  text-shadow:
+    0 1px 0 #d7d7d7,
+    0 2px 0 #9d9d9d,
+    0 8px 18px rgba(0, 0, 0, 0.88),
+    0 0 22px rgba(165, 100, 255, 0.32);
+  transform-style: preserve-3d;
+  animation: copyrightFloat 5.8s ease-in-out infinite;
 }
 
 .contact-shadow {
@@ -652,6 +659,17 @@ h1 {
   50% {
     opacity: 1;
     transform: scale(1.05);
+  }
+}
+
+@keyframes copyrightFloat {
+  0%,
+  100% {
+    transform: perspective(700px) rotateX(0deg) rotateY(0deg) translateY(0);
+  }
+
+  50% {
+    transform: perspective(700px) rotateX(4deg) rotateY(-3deg) translateY(-6px);
   }
 }
 
