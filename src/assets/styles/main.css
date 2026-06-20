@@ -647,10 +647,14 @@ h1 {
 /* ============ FUTURE SECTION ============ */
 
 .future-section {
-  padding: 0 24px clamp(80px, 13vw, 128px);
+  padding: 0;
   color: var(--color-starlight);
   text-align: center;
   background: var(--color-midnight-slate);
+}
+
+.about-text {
+  padding: 0 clamp(16px, 5vw, 48px) clamp(80px, 13vw, 128px);
 }
 
 .about-video-wrap {
@@ -658,7 +662,6 @@ h1 {
   width: 100%;
   max-height: 520px;
   overflow: hidden;
-  margin-bottom: clamp(48px, 8vw, 80px);
 }
 
 .about-video-wrap::after {
@@ -1025,6 +1028,10 @@ h1 {
   }
 
   .future-section {
+    padding: 0;
+  }
+
+  .about-text {
     padding: 0 18px 56px;
   }
 
@@ -1179,6 +1186,10 @@ h1 {
   }
 
   .future-section {
+    padding: 0;
+  }
+
+  .about-text {
     padding: 0 16px 48px;
   }
 
