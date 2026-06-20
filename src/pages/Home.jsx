@@ -171,7 +171,6 @@ export default function Home() {
           technology landscape. Stay tuned for the launch of our industry-aligned
           certification pathways and advanced training opportunities.
         </p>
-        <div className="dotted-rule" />
       </section>
 
       <section className="future-section" id="about">
