@@ -175,9 +175,18 @@ p {
   align-items: center;
   gap: 2px;
   padding: 6px;
-  border: 1px solid rgba(112, 112, 125, 0.25);
   border-radius: 999px;
-  background: rgba(39, 39, 53, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    to bottom,
+    rgba(60, 62, 80, 0.95) 0%,
+    rgba(22, 22, 34, 0.98) 100%
+  );
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.55),
+    0 2px 6px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35);
 }
 
 .nav button {
@@ -186,27 +195,29 @@ p {
   border: 0;
   will-change: transform;
   border-radius: 999px;
-  color: var(--color-starlight);
+  color: var(--color-silver);
   background: transparent;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.02em;
   cursor: pointer;
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  transition: background 160ms ease, color 160ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .nav button:hover,
-.nav button:focus {
-  background: var(--color-graphite);
-  color: var(--color-starlight);
-  transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+.nav button:focus-visible {
+  color: var(--color-pure-white);
+  background: linear-gradient(
+    to bottom,
+    rgba(90, 110, 255, 0.45) 0%,
+    rgba(55, 72, 210, 0.65) 100%
+  );
+  transform: scale(1.08) translateY(-3px);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.45),
+    0 2px 6px rgba(82, 102, 235, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
   outline: none;
-}
-
-.nav button.active {
-  background: var(--color-graphite);
-  color: var(--color-starlight);
 }
 
 .nav button.nav-flash {

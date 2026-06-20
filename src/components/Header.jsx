@@ -18,13 +18,12 @@ const navItems = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
   const [flashId, setFlashId] = useState(null);
 
-  const navigate = (id) => {
+  const navigate = (id, e) => {
+    e?.currentTarget?.blur();
     const target = document.getElementById(id);
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
-    setActiveSection(id);
     setMenuOpen(false);
     setFlashId(id);
     setTimeout(() => setFlashId(null), 700);
@@ -58,10 +57,10 @@ export default function Header() {
       <nav className={`nav ${menuOpen ? "open" : ""}`} aria-label="Primary navigation">
         {navItems.map((item) => (
           <button
-            className={[activeSection === item.id ? "active" : "", flashId === item.id ? "nav-flash" : ""].filter(Boolean).join(" ")}
+            className={flashId === item.id ? "nav-flash" : ""}
             key={item.id}
             type="button"
-            onClick={() => navigate(item.id)}
+            onClick={(e) => navigate(item.id, e)}
           >
             {item.label}
           </button>
