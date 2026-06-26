@@ -1032,9 +1032,9 @@ h1 {
 
   .about-video-wrap::after {
     background:
-      linear-gradient(to bottom, transparent 30%, var(--color-midnight-slate) 78%),
+      linear-gradient(to bottom, transparent 15%, var(--color-midnight-slate) 60%),
       linear-gradient(to left, var(--color-midnight-slate) 0%, transparent 22%),
-      linear-gradient(to right, transparent 60%, var(--color-midnight-slate) 96%);
+      linear-gradient(to right, transparent 55%, var(--color-midnight-slate) 96%);
   }
 
   /* Compact section padding on phones */
