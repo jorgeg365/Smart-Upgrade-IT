@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const socialLinks = [
   { label: "GitHub",    Icon: Github,    href: "https://github.com" },
-  { label: "LinkedIn",  Icon: Linkedin,  href: "https://linkedin.com" },
+  { label: "LinkedIn",  Icon: Linkedin,  href: "https://www.linkedin.com/company/smart-upgrade-it/" },
   { label: "Instagram", Icon: Instagram, href: "https://instagram.com" },
   { label: "X",         Icon: Twitter,   href: "https://x.com" },
 ];
