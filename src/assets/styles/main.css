@@ -680,8 +680,9 @@ h1 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, transparent 60%, var(--color-midnight-slate) 100%),
-    linear-gradient(to left, var(--color-midnight-slate) 0%, transparent 18%);
+    linear-gradient(to bottom, transparent 55%, var(--color-midnight-slate) 95%),
+    linear-gradient(to left, var(--color-midnight-slate) 0%, transparent 20%),
+    linear-gradient(to right, transparent 72%, var(--color-midnight-slate) 100%);
   pointer-events: none;
 }
 
@@ -973,7 +974,7 @@ h1 {
   }
 
   .hero {
-    min-height: calc(100svh - 64px);
+    min-height: min(480px, calc(100svh - 64px));
     padding: 48px 20px 64px;
     perspective: none;
   }
@@ -1027,6 +1028,13 @@ h1 {
 
   .about-video {
     max-height: 260px;
+  }
+
+  .about-video-wrap::after {
+    background:
+      linear-gradient(to bottom, transparent 30%, var(--color-midnight-slate) 78%),
+      linear-gradient(to left, var(--color-midnight-slate) 0%, transparent 22%),
+      linear-gradient(to right, transparent 60%, var(--color-midnight-slate) 96%);
   }
 
   /* Compact section padding on phones */
