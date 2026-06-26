@@ -680,10 +680,9 @@ h1 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 55% 50% at bottom right, var(--color-midnight-slate) 20%, transparent 80%),
-    linear-gradient(to bottom, transparent 45%, var(--color-midnight-slate) 90%),
+    linear-gradient(to bottom, transparent 55%, var(--color-midnight-slate) 95%),
     linear-gradient(to left, var(--color-midnight-slate) 0%, transparent 20%),
-    linear-gradient(to right, transparent 60%, var(--color-midnight-slate) 100%);
+    linear-gradient(to right, transparent 72%, var(--color-midnight-slate) 100%);
   pointer-events: none;
 }
 
@@ -1033,10 +1032,9 @@ h1 {
 
   .about-video-wrap::after {
     background:
-      radial-gradient(ellipse 60% 55% at bottom right, var(--color-midnight-slate) 25%, transparent 75%),
-      linear-gradient(to bottom, transparent 25%, var(--color-midnight-slate) 72%),
+      linear-gradient(to bottom, transparent 30%, var(--color-midnight-slate) 78%),
       linear-gradient(to left, var(--color-midnight-slate) 0%, transparent 22%),
-      linear-gradient(to right, transparent 52%, var(--color-midnight-slate) 96%);
+      linear-gradient(to right, transparent 60%, var(--color-midnight-slate) 96%);
   }
 
   /* Compact section padding on phones */
